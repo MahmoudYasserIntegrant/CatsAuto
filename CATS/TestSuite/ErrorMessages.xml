@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite thread-count="1" verbose="1" name="ValidateCDCodeisAlreadyinUse" annotations="JDK" parallel="tests">
+         
+ 
+    <test name="Validate CD Code Errors">
+	<classes>
+	<class name="tests.ValidateCDCodeErrors"/>
+	</classes>
+    </test>
+    
+    
+    <test name="Validate The Plan Errors">
+	<classes>
+	<class name="tests.ValidateThePlanErrors"/>
+	</classes>
+    </test>
+    
+    <test name="Validate Mandatory Field">
+	<classes>
+	<class name="tests.ValidateMandatoryField"/>
+	</classes>
+    </test>
+    
+    <test name="Validate Clear and Cancel Button">
+	<classes>
+	<class name="tests.ValidateClearNCancelButton"/>
+	</classes>
+   	</test>
+   	
+</suite>

@@ -1,0 +1,7 @@
+[14120:10920:0421/152053.511:ERROR:configuration_policy_handler_list.cc(90)] Unknown policy: AdvancedProtectionAllowed
+[14120:10920:0421/152053.512:ERROR:configuration_policy_handler_list.cc(90)] Unknown policy: NativeWindowOcclusionEnabled
+[14120:10920:0421/152053.512:ERROR:configuration_policy_handler_list.cc(90)] Unknown policy: ScrollToTextFragmentEnabled
+[14120:10920:0421/152053.512:ERROR:configuration_policy_handler_list.cc(90)] Unknown policy: UseLegacyFormControls
+[14120:10920:0421/152053.512:ERROR:configuration_policy_handler_list.cc(90)] Unknown policy: UserDataSnapshotRentionLimit
+[14120:10920:0421/152101.108:ERROR:chrome_browser_cloud_management_register_watcher.cc(84)] Can not start Chrome as chrome browser cloud management enrollment has failed. Please double check network connection and the status of enrollment token then open Chrome again.
+[14120:10920:0421/152101.157:WARNING:pref_notifier_impl.cc(40)] Pref observer for browser.relaunch_notification_period found at shutdown.

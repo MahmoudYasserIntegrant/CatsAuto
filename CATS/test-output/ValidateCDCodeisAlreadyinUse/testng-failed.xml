@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [ValidateCDCodeisAlreadyinUse]" parallel="tests">
+  <test thread-count="1" name="Validate CD Code Errors(failed)" parallel="tests">
+    <classes>
+      <class name="tests.ValidateCDCodeErrors">
+        <methods>
+          <include name="beforeClass"/>
+          <include name="ValidateCDCodedoesntMatch" invocation-numbers="4"/>
+          <include name="afterClass"/>
+        </methods>
+      </class> <!-- tests.ValidateCDCodeErrors -->
+    </classes>
+  </test> <!-- Validate CD Code Errors(failed) -->
+</suite> <!-- Failed suite [ValidateCDCodeisAlreadyinUse] -->
