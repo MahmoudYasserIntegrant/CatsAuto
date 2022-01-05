@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite thread-count="1" guice-stage="DEVELOPMENT" name="Failed suite [AddPlanRateDefinition]" parallel="tests">
+  <test thread-count="1" name="AddPlanRateDefinition(failed)" parallel="tests">
+    <classes>
+      <class name="tests.AddPlanRateDefinition">
+        <methods>
+          <include name="afterClass"/>
+          <include name="beforeClass"/>
+          <include name="AddnewPlanRate" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- tests.AddPlanRateDefinition -->
+    </classes>
+  </test> <!-- AddPlanRateDefinition(failed) -->
+</suite> <!-- Failed suite [AddPlanRateDefinition] -->
