@@ -19,6 +19,7 @@ import org.testng.annotations.AfterMethod;
 import pages.CATSLoginPage;
 import pages.CatsMenu;
 
+@SuppressWarnings("unused")
 public class Base {
 	
 	/*

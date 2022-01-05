@@ -16,7 +16,6 @@ import com.utility.Locators_Repo;
 public class CatsMenu extends Locators_Repo  {
 	
 
-
 	public CatsMenu(WebDriver browserObject) {
 		
 		this.browserObject= browserObject;
@@ -29,18 +28,12 @@ public class CatsMenu extends Locators_Repo  {
 		 
 		WebElement element = (new WebDriverWait(browserObject, 50))
 				   .until(ExpectedConditions.elementToBeClickable(By.linkText("Sold Groups")));
-		Action.moveToElement(element).build().perform();
-		//browserObject.findElement(SoldGroups).click();
-		
+		Action.moveToElement(element).build().perform();	
 		WebElement element1 = browserObject.findElement(SoldGroups);
 		 browserObject.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS) ;
 		 element1.click();	
-		
-
 	}
-	
-	
-	
+
 	public void NavigateToEmployerSettingsScreen(String CustomerNum) {
 		
 		WebElement element = browserObject.findElement(GroupNumberTextBox);
@@ -73,8 +66,6 @@ public class CatsMenu extends Locators_Repo  {
 		WebElement element3 = browserObject.findElement(EmployerGroupSettingsBtn);
 		browserObject.manage().timeouts().implicitlyWait(5000,TimeUnit.SECONDS) ;
 		element3.click();
-		
-
 	}
 
 

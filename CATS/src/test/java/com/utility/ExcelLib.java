@@ -18,7 +18,7 @@ public class ExcelLib extends Base {
 	public static Object[][] loginData() throws IOException {
 		Object[][] arrayObject = getExcelData(
 				
-				"C:\\Hossam\\Automation\\CATS\\src\\test\\java\\testdata\\TestData.xlsx",
+				"D:\\Hossam\\Automation\\CATS\\src\\test\\java\\testdata\\TestData.xlsx",
 				"CATSLogin");
 		return arrayObject;
 	}
@@ -54,6 +54,7 @@ public class ExcelLib extends Base {
 
 	}
 
+	@SuppressWarnings("deprecation")
 	public static String cellToString(XSSFCell cell) {
 		// TODO Auto-generated method stub
 		Object result;

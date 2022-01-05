@@ -7,6 +7,7 @@ import com.utility.ExcelLib;
 
 
 import pages.CatsMenu;
+import pages.EmployerSettingPage;
 import pages.CATSLoginPage;
 
 import org.testng.annotations.BeforeMethod;
@@ -31,12 +32,12 @@ public class AgentSettingsTest extends ExcelLib {
 	WebDriver browserObject ;
 	CATSLoginPage CATSLOGIN;
 	CatsMenu CMenu ;
-	
+	EmployerSettingPage EmpSettings ;
 
 	@BeforeMethod
 	  public void beforeClass() {
 		  
-		 System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "D:\\Hossam\\Automation\\chromedriver_win32\\chromedriver.exe");
 		 browserObject = new ChromeDriver();
 		 browserObject .manage().window().maximize();			
 		 CATSLOGIN = new CATSLoginPage(browserObject);
@@ -47,14 +48,22 @@ public class AgentSettingsTest extends ExcelLib {
 	  
  
 	  @Test(dataProvider = "CATSLogin")
-	  public void CheckAgentSetting(String username , String password , String CustomerNum){
+	  public void CheckAgentSetting(String username , String password , String CustomerNum , String SendLettersbyMail ,
+			  String SendInvoicesByMail , String OptOutEmailNotification , String ACHSelection , String BankRoutionNumber,
+			  String BankAccountNum , String ReenterBankAccountNum , String BankAccountType , String IAuthorize	,String CalendarDay ){
 
 		  CATSLOGIN = new CATSLoginPage(browserObject);
-		  CATSLOGIN.Login(username , password);	  	  
 		  CMenu = new CatsMenu(browserObject);
+		  EmpSettings = new EmployerSettingPage(browserObject);
+		  
+		  CATSLOGIN.Login(username , password);	
 		  CMenu.NavigateToSoldGroups();
 		  CMenu.NavigateToEmployerSettingsScreen(CustomerNum);
-		   
+		  EmpSettings.SendLetters(SendLettersbyMail);
+		  EmpSettings.SendInvoices(SendInvoicesByMail);
+		  EmpSettings.SelectOptOut(OptOutEmailNotification);
+		  EmpSettings.SelectElectronicPayment(ACHSelection,BankRoutionNumber,BankAccountNum ,
+				  ReenterBankAccountNum , BankAccountType , IAuthorize , CalendarDay );
 	  }
 
 
@@ -66,7 +75,7 @@ public class AgentSettingsTest extends ExcelLib {
 			File source = ((TakesScreenshot)browserObject).getScreenshotAs(OutputType.FILE);
 			
 			try {
-				FileHandler.copy(source, new File("C:\\Hossam\\Automation\\screenshots\\"+dateFormat.format(date)+".png")); 
+				FileHandler.copy(source, new File("D:\\Hossam\\Automation\\"+dateFormat.format(date)+".png")); 
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();

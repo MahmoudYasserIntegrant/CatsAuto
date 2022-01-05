@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="32973" started-at="2021-03-03T13:29:48Z" finished-at="2021-03-03T13:30:21Z">
+  <suite started-at="2022-01-04T12:40:24Z" name="Default suite" finished-at="2022-01-04T12:41:26Z" duration-ms="61955">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="32973" started-at="2021-03-03T13:29:48Z" finished-at="2021-03-03T13:30:21Z">
+    <test started-at="2022-01-04T12:40:24Z" name="Default test" finished-at="2022-01-04T12:41:26Z" duration-ms="61955">
       <class name="tests.AgentSettingsTest">
-        <test-method status="PASS" signature="beforeClass()[pri:0, instance:tests.AgentSettingsTest@14bf9759]" name="beforeClass" is-config="true" duration-ms="8295" started-at="2021-03-03T13:29:49Z" finished-at="2021-03-03T13:29:57Z">
+        <test-method is-config="true" signature="beforeClass()[pri:0, instance:tests.AgentSettingsTest@37e4d7bb]" started-at="2022-01-04T12:40:24Z" name="beforeClass" finished-at="2022-01-04T12:40:29Z" duration-ms="4341" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeClass -->
-        <test-method status="PASS" signature="CheckAgentSetting(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.AgentSettingsTest@14bf9759]" name="CheckAgentSetting" duration-ms="20782" started-at="2021-03-03T13:29:57Z" data-provider="CATSLogin" finished-at="2021-03-03T13:30:18Z">
+        <test-method signature="CheckAgentSetting(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:tests.AgentSettingsTest@37e4d7bb]" started-at="2022-01-04T12:40:29Z" name="CheckAgentSetting" data-provider="CATSLogin" finished-at="2022-01-04T12:41:23Z" duration-ms="54073" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -28,11 +28,61 @@
                 <![CDATA[53357214]]>
               </value>
             </param>
+            <param index="3">
+              <value>
+                <![CDATA[Yes]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[No]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[Yes]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[Enable ACH]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[011000015]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[12345]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[12345]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[Savings]]>
+              </value>
+            </param>
+            <param index="11">
+              <value>
+                <![CDATA[Yes]]>
+              </value>
+            </param>
+            <param index="12">
+              <value>
+                <![CDATA[13]]>
+              </value>
+            </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- CheckAgentSetting -->
-        <test-method status="PASS" signature="afterClass()[pri:0, instance:tests.AgentSettingsTest@14bf9759]" name="afterClass" is-config="true" duration-ms="3379" started-at="2021-03-03T13:30:18Z" finished-at="2021-03-03T13:30:21Z">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:tests.AgentSettingsTest@37e4d7bb]" started-at="2022-01-04T12:41:23Z" name="afterClass" finished-at="2022-01-04T12:41:26Z" duration-ms="3163" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
