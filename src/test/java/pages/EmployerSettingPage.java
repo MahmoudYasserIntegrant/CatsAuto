@@ -7,9 +7,9 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
-import com.utility.Locators_Repo;
+import com.utility.EmployerSettingLocators;
 
-public class EmployerSettingPage extends Locators_Repo {
+public class EmployerSettingPage extends EmployerSettingLocators {
 	
 	public EmployerSettingPage(WebDriver browserObject)
 	{
@@ -255,7 +255,12 @@ public class EmployerSettingPage extends Locators_Repo {
 			
 				browserObject.findElement(DisableACHRadioBtn).click();
 				
-
+				try {
+					Thread.sleep(3000);
+				} catch (InterruptedException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				
 				browserObject.findElement(EmpGrpSettingsSaveBtn).click();
 			}
