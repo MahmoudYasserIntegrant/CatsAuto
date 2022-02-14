@@ -1,11 +1,15 @@
 package pages;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 
 import com.utility.EmployerSettingLocators;
 
@@ -15,37 +19,53 @@ public class EmployerSettingPage extends EmployerSettingLocators {
 	{
 		this.browserObject = browserObject;
 	}
+	public void WaitForElements(By byElement) {
+		FluentWait wait = new FluentWait(browserObject);
+		//Specify the timout of the wait
+		wait.withTimeout(5000, TimeUnit.MILLISECONDS);
+		//Sepcify polling time
+		wait.pollingEvery(250, TimeUnit.MILLISECONDS);
+		//Specify what exceptions to ignore
+		wait.ignoring(NoSuchElementException.class);
+		wait.until(ExpectedConditions.elementToBeClickable(byElement));
+
+	}
 	
-	
+	@SuppressWarnings("deprecation")
 	public void SendLetters(String SendLettersbyMail) 
 	{
-		try {
+	
+		/*try {
 			Thread.sleep(3000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
+		WaitForElements(SendLettersByMailYestitle);
+
 
 		if(SendLettersbyMail.equalsIgnoreCase(browserObject.findElement(SendLettersByMailYestitle).getText()))
-
 		{
-			try {
+			/*try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
 			System.out.println("This is the default selection");
 			browserObject.findElement(SendLettersByMailYesRadioBtn).click();
 		}
 		
 		else {
+			/*
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
+			WaitForElements(SendLettersByMailNoRadioBtn);
+
 				browserObject.findElement(SendLettersByMailNoRadioBtn).click();
 			 }
 
@@ -53,32 +73,38 @@ public class EmployerSettingPage extends EmployerSettingLocators {
 	
 	public void SendInvoices(String SendInvoicesByMail) 
 	{
-		try {
+		/*try {
 			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
+		}*/
+		WaitForElements(SendInvoicesByMailYestitle);
 
 		if(SendInvoicesByMail.equalsIgnoreCase(browserObject.findElement(SendInvoicesByMailYestitle).getText()))
 
 		{
+			/*
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
+			
 			System.out.println("This is the default selection");
 			browserObject.findElement(SendInvoiceByMailYesRadioBtn).click();
 		}
 		else {
+			/*
 			try {
 				Thread.sleep(1000);
 			} catch (InterruptedException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
-			}
+			}*/
+			WaitForElements(SendInvoicesByMailNoRadioBtn);
+
 				browserObject.findElement(SendInvoicesByMailNoRadioBtn).click();
 			 }
 	}
@@ -255,12 +281,7 @@ public class EmployerSettingPage extends EmployerSettingLocators {
 			
 				browserObject.findElement(DisableACHRadioBtn).click();
 				
-				try {
-					Thread.sleep(3000);
-				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-				}
+
 				
 				browserObject.findElement(EmpGrpSettingsSaveBtn).click();
 			}
