@@ -68,6 +68,12 @@ public class CatsMenu extends CatsMenuLocators  {
 		browserObject.manage().timeouts().implicitlyWait(5000,TimeUnit.SECONDS) ;
 		element3.click();
 	}
+      public void NavigateToAgentLetters() {
+		
+		WebElement element = (new WebDriverWait(browserObject, 100))
+				   .until(ExpectedConditions.elementToBeClickable(By.linkText("Letters")));
+		element.click();
+	 }
 
 
 }

@@ -23,6 +23,14 @@ public class ExcelLib extends Base {
 		return arrayObject;
 	}
 
+	@DataProvider(name = "AgentLogin")
+	public static String[][] getAgentLoginData() throws IOException {
+		String[][] arrayObject = getExcelData(
+				
+				"D:\\CATSDemo\\TestData.xlsx",
+				"AgentLogin");
+		return arrayObject;
+	}
 
 
 	public static String[][] getExcelData(String fileName, String sheetName) throws IOException {
