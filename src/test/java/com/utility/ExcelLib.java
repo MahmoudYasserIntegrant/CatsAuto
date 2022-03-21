@@ -18,7 +18,7 @@ public class ExcelLib extends Base {
 	public static Object[][] loginData() throws IOException {
 		Object[][] arrayObject = getExcelData(
 				
-				"D:\\CATSDemo\\TestData.xlsx",
+				"D:\\Local Disk\\Git\\CatsAuto\\src\\test\\java\\testdata\\TestData.xlsx",
 				"CATSLogin");
 		return arrayObject;
 	}
@@ -27,7 +27,7 @@ public class ExcelLib extends Base {
 	public static String[][] getAgentLoginData() throws IOException {
 		String[][] arrayObject = getExcelData(
 				
-				"D:\\CATSDemo\\TestData.xlsx",
+				"D:\\Local Disk\\Git\\CatsAuto\\src\\test\\java\\testdata\\TestData.xlsx",
 				"AgentLogin");
 		return arrayObject;
 	}
