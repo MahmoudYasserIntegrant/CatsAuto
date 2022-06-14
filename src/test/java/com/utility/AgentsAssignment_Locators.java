@@ -9,6 +9,7 @@ public WebDriver browserObject ;
 	
 	public By AgentLookup_Btn = By.id("ctl00_DefaultContent_uxShowLookupAgentCommand");
     public By Done_Btn = By.id("ctl00_DefaultContent_uxAgentsAssignmentSaveBar_uxSaveAndClose");
+    public By Next_Btn = By.id("ctl00_DefaultContent_uxAgentsAssignmentSaveBar_uxSaveAndNew");
     
 	//Agent Lookup pop-up Locators
     public By AgentLookup_Container = By.id("ctl00_DefaultContent_uxAgentLookupContainer");

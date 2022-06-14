@@ -13,14 +13,6 @@ public class QuotingSideBarMenu extends QuotingSideBarMenu_Locators {
 	{
 		this.browserObject= browserObject;
 	}
-
-	public void NavigateToGroup()
-	{
-		WebDriverWait wait = new WebDriverWait(browserObject, 10);
-		browserObject.findElement(GroupNumber_Link).click();
-		
-		wait.until(ExpectedConditions.titleContains("Customer Details"));
-	}
 	
 	public void NavigateToAgentsAssignment()
 	{
