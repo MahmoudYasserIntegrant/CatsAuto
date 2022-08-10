@@ -37,7 +37,7 @@ public class AgentSettingsTest extends ExcelLib {
 	@BeforeMethod
 	  public void beforeClass() {
 		  
-		 System.setProperty("webdriver.chrome.driver", "D:\\CATSDemo\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "D:\\git\\chromedriver.exe");
 		 browserObject = new ChromeDriver();
 		 browserObject .manage().window().maximize();			
 		 CATSLOGIN = new CATSLoginPage(browserObject);
@@ -70,7 +70,7 @@ public class AgentSettingsTest extends ExcelLib {
 	
 	  @AfterMethod
 	  public void afterClass() {
-	       DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy h-m-s");
+	      /* DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy h-m-s");
 	        Date date = new Date();
 			File source = ((TakesScreenshot)browserObject).getScreenshotAs(OutputType.FILE);
 			
@@ -86,7 +86,7 @@ public class AgentSettingsTest extends ExcelLib {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-		//browserObject.close();
+		//browserObject.close();*/
 	  }
 	  
 	 
