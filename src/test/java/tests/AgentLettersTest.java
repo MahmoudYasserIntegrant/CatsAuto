@@ -26,12 +26,11 @@ public class AgentLettersTest extends ExcelLib  {
 	@BeforeMethod
 	  public void beforeClass() {
 		  
-		 System.setProperty("webdriver.chrome.driver", "D:\\Git\\CatsAuto\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "D:\\Local Disk\\Git\\CatsAuto\\chromedriver.exe");
 		 browserObject = new ChromeDriver();
 		 browserObject .manage().window().maximize();			
 		 CATSLOGIN = new CATSLoginPage(browserObject);
 		 CATSLOGIN.NavigatetoURL();
-		
 	}
 		 
 	 @Test(dataProvider = "AgentLogin")
@@ -44,19 +43,18 @@ public class AgentLettersTest extends ExcelLib  {
 		  CATSLOGIN.Login(username , password);	
 		  CMenu.NavigateToAgentLetters();
 		  AgLetters.downloadAgentLetter(LetterName);
-		  
 	 }
 	 
 	 
 		  @AfterMethod
 		  public void afterClass() {
 			  
-		       DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy h-m-s");
+		     /*  DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy h-m-s");
 		        Date date = new Date();
 				File source = ((TakesScreenshot)browserObject).getScreenshotAs(OutputType.FILE);
 				
 		/*		try {
-					FileHandler.copy(source, new File("D:\Git\CatsAuto\\"+dateFormat.format(date)+".png")); 
+					FileHandler.copy(source, new File("D:\\Local Disk\\Git\\CatsAuto\\"+dateFormat.format(date)+".png")); 
 				} catch (IOException e1) {
 					// TODO Auto-generated catch block
 					e1.printStackTrace();
