@@ -8,6 +8,5 @@ public class QuotingSideBarMenu_Locators {
 	public WebDriver browserObject ;
 	
 	public By AgentsAssignment_SideBarItem = By.id("ctl00_uxSideMenu_ctl01_lnkMenu");
-	public By GroupQuotes_SideBarItem = By.id("ctl00_uxSideMenu_ctl04_lnkMenu");
-	
+
 }
