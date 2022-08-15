@@ -8,8 +8,13 @@ public class LoginPageLocators {
 	
 	public WebDriver browserObject ;
 	
+<<<<<<< HEAD
+	public String URL = "http://10.1.22.181/HIAS_Agent/loblogonview.aspx";
+	public By Usernamepath = By.id("ctl00_DefaultContent_uxUserNameField");
+=======
 	public String URL = "http://10.1.22.181/HIAS_Agent/";
 	public By Usernamepath = By.xpath("//input[@id='ctl00_DefaultContent_uxUserNameField']");
+>>>>>>> refs/heads/Census_Screen
 	public By Passwordpath = By.xpath("//input[@type='password']");
 	
 
