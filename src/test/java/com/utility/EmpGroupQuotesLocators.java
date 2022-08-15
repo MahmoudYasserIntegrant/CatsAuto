@@ -9,7 +9,7 @@ public class EmpGroupQuotesLocators {
 	public By GenerateQuoteBtn = By.id("ctl00_DefaultContent_uxPrintCommand");
 	public By DoneBtn = By.id("ctl00_DefaultContent_uxDoneCommand");
 	
-// test //
+// test /////
 	
 
 }
