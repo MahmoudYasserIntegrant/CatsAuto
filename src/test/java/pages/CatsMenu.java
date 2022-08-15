@@ -111,7 +111,7 @@ public class CatsMenu extends CatsMenuLocators  {
 			element5.click();			
       }
       
-//test
+
 
 
 }

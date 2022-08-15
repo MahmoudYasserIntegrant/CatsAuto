@@ -37,7 +37,11 @@ public class AgentSettingsTest extends ExcelLib {
 	@BeforeMethod
 	  public void beforeClass() {
 		  
+<<<<<<< HEAD
+		 System.setProperty("webdriver.chrome.driver", "D:\\Local Disk\\CATSDemo\\chromedriver.exe");
+=======
 		 System.setProperty("webdriver.chrome.driver", "D:\\git\\chromedriver.exe");
+>>>>>>> refs/heads/Census_Screen
 		 browserObject = new ChromeDriver();
 		 browserObject .manage().window().maximize();			
 		 CATSLOGIN = new CATSLoginPage(browserObject);
@@ -75,7 +79,7 @@ public class AgentSettingsTest extends ExcelLib {
 			File source = ((TakesScreenshot)browserObject).getScreenshotAs(OutputType.FILE);
 			
 			try {
-				FileHandler.copy(source, new File("D:\\CATSDemo\\"+dateFormat.format(date)+".png")); 
+				FileHandler.copy(source, new File("D:\\Local Disk\\CATSDemo\\"+dateFormat.format(date)+".png")); 
 			} catch (IOException e1) {
 				// TODO Auto-generated catch block
 				e1.printStackTrace();
