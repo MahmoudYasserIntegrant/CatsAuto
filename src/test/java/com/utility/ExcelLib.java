@@ -18,7 +18,7 @@ public class ExcelLib extends Base {
 	public static Object[][] loginData() throws IOException {
 		Object[][] arrayObject = getExcelData(
 				
-				"D:\\git\\CatsAuto\\src\\test\\java\\testdata\\TestData.xlsx",
+				"D:\\Local\\git\\CatsAuto\\src\\test\\java\\testdata\\TestData.xlsx",
 				"CATSLogin");
 		return arrayObject;
 	}
@@ -27,7 +27,7 @@ public class ExcelLib extends Base {
 	public static String[][] getAgentLoginData() throws IOException {
 		String[][] arrayObject = getExcelData(
 				
-				"D:\\git\\CatsAuto\\src\\test\\java\\testdata\\TestData.xlsx",
+				"D:\\Local\\git\\CatsAuto\\src\\test\\java\\testdata\\TestData.xlsx",
 				"AgentLogin");
 		return arrayObject;
 	}
@@ -35,8 +35,16 @@ public class ExcelLib extends Base {
 	public static String[][] CensusData() throws IOException {
 		String[][] arrayObject = getExcelData(
 				
-				"D:\\git\\CatsAuto\\src\\test\\java\\testdata\\TestData.xlsx",
+				"D:\\Local\\git\\CatsAuto\\src\\test\\java\\testdata\\TestData.xlsx",
 				"Census");
+		return arrayObject;
+	}
+	@DataProvider(name = "EmpQuotes")
+	public static String[][] GroupQuotesData() throws IOException {
+		String[][] arrayObject = getExcelData(
+				
+				"D:\\Local\\git\\CatsAuto\\src\\test\\java\\testdata\\TestData.xlsx",
+				"EmpQuotes");
 		return arrayObject;
 	}
 
