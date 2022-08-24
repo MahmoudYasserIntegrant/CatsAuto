@@ -10,7 +10,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.utility.CatsMenuLocators;
 
 
@@ -111,8 +110,46 @@ public class CatsMenu extends CatsMenuLocators  {
 			element5.click();			
       }
       
-//test
 
+
+      public void NavigatetoGroupQuotes(String CustomerNum)
+      {
+    	  
+    	  WebElement element = (new WebDriverWait(browserObject, 30))
+				   .until(ExpectedConditions.elementToBeClickable(By.linkText("Quoting")));
+		Action.moveToElement(element).build().perform();
+		
+		WebElement element1 = browserObject.findElement(Quoting);
+		 browserObject.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS) ;
+		 element1.click();
+		 
+			WebElement element2 = browserObject.findElement(GroupNumberQuotingTextBox);
+			browserObject.manage().timeouts().implicitlyWait(5000,TimeUnit.SECONDS) ;
+			element2.sendKeys(CustomerNum);
+			
+		
+			WebElement element3 = browserObject.findElement(QuoteGroupsSearchBtn);
+			browserObject.manage().timeouts().implicitlyWait(5000,TimeUnit.SECONDS) ;
+			element3.click();
+			
+				try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+
+			WebElement element4 = browserObject.findElement(QuoteGroupNumberHyberLink);
+			browserObject.manage().timeouts().implicitlyWait(5000,TimeUnit.SECONDS) ;
+			element4.click();
+	
+			WebDriverWait wait = new WebDriverWait(browserObject, 50);
+			browserObject.findElement(GroupQuotes_Link).click();
+			wait.until(ExpectedConditions.titleContains("Employer Group Quotes"));
+			
+
+      }
 
 }
 

@@ -24,8 +24,7 @@ public class CatsMenuLocators {
 		public By QuoteGroupsSearchBtn = By.name("ctl00$DefaultContent$uxSearchCommand");
 		public By QuoteGroupNumberHyberLink = By.id("ctl00_DefaultContent_uxCustomerList_ctl02_uxCustomerNumberCommand");
 		public By CensusSideBarMenu = By.id("ctl00_uxSideMenu_ctl03_lnkMenu");
-		
-
+		public By GroupQuotes_Link = By.id("ctl00_uxSideMenu_ctl04_lnkMenu");
 
 		
 		
