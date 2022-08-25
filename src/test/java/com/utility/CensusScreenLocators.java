@@ -50,6 +50,6 @@ public class CensusScreenLocators {
 		
 		
 		public By DoneBtn  = By.name("ctl00$DefaultContent$uxCensusSummarySaveBar$uxSaveAndClose");
-
+//
 
 }
