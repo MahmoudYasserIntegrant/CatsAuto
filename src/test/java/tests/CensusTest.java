@@ -39,7 +39,7 @@ public class CensusTest extends ExcelLib {
 	@BeforeMethod
 	  public void beforeClass() {
 		  
-		 System.setProperty("webdriver.chrome.driver", "D:\\Local\\git\\CatsAuto\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "D:\\git\\CatsAuto\\chromedriver.exe");
 		 browserObject = new ChromeDriver();
 		 browserObject .manage().window().maximize();			
 		 CATSLOGIN = new CATSLoginPage(browserObject);
