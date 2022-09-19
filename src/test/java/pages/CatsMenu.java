@@ -150,6 +150,47 @@ public class CatsMenu extends CatsMenuLocators  {
 			
 
       }
+      
+      public void NavigatetoGroupEnrollment(String GroupNum)
+      {
+    	  
+  		WebElement element = (new WebDriverWait(browserObject, 50))
+				   .until(ExpectedConditions.elementToBeClickable(By.linkText("Quoting")));
+		Action.moveToElement(element).build().perform();	
+		WebElement element1 = browserObject.findElement(Quoting);
+		 browserObject.manage().timeouts().implicitlyWait(50,TimeUnit.SECONDS) ;
+		 element1.click();
+		 
+			WebElement element2 = browserObject.findElement(GroupNumberQuotingTextBox);
+			browserObject.manage().timeouts().implicitlyWait(5000,TimeUnit.SECONDS) ;
+			element2.sendKeys(GroupNum);
+			
+		
+			WebElement element3 = browserObject.findElement(QuoteGroupsSearchBtn);
+			browserObject.manage().timeouts().implicitlyWait(5000,TimeUnit.SECONDS) ;
+			element3.click();
+			
+			try {
+				Thread.sleep(5000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+    	  
+			WebElement element4 = browserObject.findElement(QuoteGroupNumberHyberLink);
+			browserObject.manage().timeouts().implicitlyWait(5000,TimeUnit.SECONDS) ;
+			element4.click();
+			try {
+				Thread.sleep(3000);
+			} catch (InterruptedException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+	
+			WebDriverWait wait = new WebDriverWait(browserObject, 50);
+			browserObject.findElement(GroupEnrollmentSideBarMenu).click();
+			wait.until(ExpectedConditions.titleContains("Group Enrollment"));		
+      }
 
 }
 

@@ -1,42 +1,47 @@
 package tests;
+
 import org.testng.annotations.Test;
+
+
 import com.utility.ExcelLib;
+
+
 import pages.CatsMenu;
 import pages.CensusScreen;
 import pages.EmployerSettingPage;
+import pages.GroupEnrollmentScreen;
 import pages.CATSLoginPage;
-import pages.EmpGroupQuotes;
+
 import org.testng.annotations.BeforeMethod;
+
 import java.io.File;
 import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.UnexpectedAlertBehaviour;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.io.FileHandler;
-import org.openqa.selenium.remote.CapabilityType;
-import org.openqa.selenium.remote.DesiredCapabilities;
+
 import org.testng.annotations.AfterMethod;
 
 
+public class GroupEnrollmentTest extends ExcelLib {
 
-public class EmpGroupQuotesTest extends ExcelLib {
 	WebDriver browserObject ;
 	CATSLoginPage CATSLOGIN;
 	CatsMenu CMenu ;
-	EmpGroupQuotes EGQuotes;
+	CensusScreen Census;
+	GroupEnrollmentScreen GREnroll ;
+
 
 	@BeforeMethod
 	  public void beforeClass() {
 		  
 		 System.setProperty("webdriver.chrome.driver", "D:\\git\\chromedriver.exe");
-		// DesiredCapabilities dc = new DesiredCapabilities();
-		// dc.setCapability(CapabilityType.UNEXPECTED_ALERT_BEHAVIOUR, UnexpectedAlertBehaviour.IGNORE);
-		// browserObject = new ChromeDriver(dc);
 		 browserObject = new ChromeDriver();
 		 browserObject .manage().window().maximize();			
 		 CATSLOGIN = new CATSLoginPage(browserObject);
@@ -44,19 +49,25 @@ public class EmpGroupQuotesTest extends ExcelLib {
 		 
 	  }
 	
-	  @Test(dataProvider = "EmpQuotes")
-	  public void GenerateQuotes(String username , String password , String CustomerNum,String QuoteNbr) throws InterruptedException, IOException{
+	  
+ 
+	  @Test(dataProvider = "GroupEnrollment")
+	  public void CheckEmployer_Group_Enrollment(String username,String password,String GroupNum,
+			  String DentalCov,String VisionCov,String BasicLifeCov,String VolCov,String STDCov)
+	  {
 
 		  CATSLOGIN = new CATSLoginPage(browserObject);
 		  CMenu = new CatsMenu(browserObject);
-		  EGQuotes = new EmpGroupQuotes(browserObject);
-		  CATSLOGIN.Login(username , password);	
-		  CMenu.NavigatetoGroupQuotes(CustomerNum);
-		  EGQuotes.GenerateQuoteDocuments(QuoteNbr);
+		  GREnroll = new GroupEnrollmentScreen(browserObject);
+
 		  
+		  CATSLOGIN.Login(username , password);	
+		  CMenu.NavigatetoGroupEnrollment(GroupNum);
+		  GREnroll.selectcov( DentalCov,VisionCov,BasicLifeCov,VolCov,STDCov);
+
 	  }
 
-	
+
 	
 	  @AfterMethod
 	  public void afterClass() {
@@ -76,8 +87,8 @@ public class EmpGroupQuotesTest extends ExcelLib {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			*/
-		//browserObject.close();
+		//browserObject.close();*/
 	  }
-
+	  
+	 
 }

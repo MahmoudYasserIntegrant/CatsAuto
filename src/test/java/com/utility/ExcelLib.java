@@ -43,8 +43,16 @@ public class ExcelLib extends Base {
 	public static String[][] GroupQuotesData() throws IOException {
 		String[][] arrayObject = getExcelData(
 				
-				"D:\\Local\\git\\CatsAuto\\src\\test\\java\\testdata\\TestData.xlsx",
+				"D:\\git\\CatsAuto\\src\\test\\java\\testdata\\TestData.xlsx",
 				"EmpQuotes");
+		return arrayObject;
+	}
+	@DataProvider(name = "GroupEnrollment")
+	public static String[][] GroubEnrolData() throws IOException {
+		String[][] arrayObject = getExcelData(
+				
+				"D:\\git\\CatsAuto\\src\\test\\java\\testdata\\TestData.xlsx",
+				"GroupEnrollment");
 		return arrayObject;
 	}
 

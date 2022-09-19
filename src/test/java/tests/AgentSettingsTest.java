@@ -37,7 +37,7 @@ public class AgentSettingsTest extends ExcelLib {
 	@BeforeMethod
 	  public void beforeClass() {
 		  
-		 System.setProperty("webdriver.chrome.driver", "D:\\Git\\CatsAuto\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "D:\\Git\\chromedriver.exe");
 		 browserObject = new ChromeDriver();
 		 browserObject .manage().window().maximize();			
 		 CATSLOGIN = new CATSLoginPage(browserObject);
