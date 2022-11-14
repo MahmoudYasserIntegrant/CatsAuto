@@ -1,0 +1,7 @@
+ControlFocus("Open","","Edit1")
+Sleep(2000)
+ControlSetText("Open","","Edit1","D:\Hossam\API\RefundBulkTemplate_20221101173842327.xlsx")
+Sleep(2000)
+ControlClick("Open","","Button1")
+Sleep(2000)
+MouseClick("Primary"-8,-8,1,1)
