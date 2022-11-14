@@ -1,31 +1,14 @@
 package tests;
 
 import org.testng.annotations.Test;
-
-
 import com.utility.ExcelLib;
-
-
 import pages.CatsMenu;
 import pages.CensusScreen;
-import pages.EmployerSettingPage;
 import pages.GroupEnrollmentScreen;
 import pages.CATSLoginPage;
-
 import org.testng.annotations.BeforeMethod;
-
-import java.io.File;
-import java.io.IOException;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.io.FileHandler;
-
 import org.testng.annotations.AfterMethod;
 
 
@@ -41,9 +24,9 @@ public class GroupEnrollmentTest extends ExcelLib {
 	@BeforeMethod
 	  public void beforeClass() {
 		  
-		 System.setProperty("webdriver.chrome.driver", "D:\\git\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "D:\\git\\chromedriver_win32(1)\\chromedriver.exe");
 		 browserObject = new ChromeDriver();
-		 browserObject .manage().window().maximize();			
+		 browserObject .manage().window().maximize();
 		 CATSLOGIN = new CATSLoginPage(browserObject);
 		 CATSLOGIN.NavigatetoURL();
 		 
@@ -52,8 +35,9 @@ public class GroupEnrollmentTest extends ExcelLib {
 	  
  
 	  @Test(dataProvider = "GroupEnrollment")
-	  public void CheckEmployer_Group_Enrollment(String username,String password,String GroupNum,
-			  String DentalCov,String VisionCov,String BasicLifeCov,String VolCov,String STDCov)
+	  public void CheckEmployer_Group_Enrollment(String username,String password,String GroupNum, 
+			  String DenCov ,String VisionCov,String BasicLCov,String VolCov, String StdCov,
+			  String Quotes , String Single , String DualChoice , String DualChoicePlus ,String DenQuotes) throws InterruptedException
 	  {
 
 		  CATSLOGIN = new CATSLoginPage(browserObject);
@@ -63,7 +47,12 @@ public class GroupEnrollmentTest extends ExcelLib {
 		  
 		  CATSLOGIN.Login(username , password);	
 		  CMenu.NavigatetoGroupEnrollment(GroupNum);
-		  GREnroll.selectcov( DentalCov,VisionCov,BasicLifeCov,VolCov,STDCov);
+		
+			GREnroll.selectcov(DenCov,VisionCov,BasicLCov,VolCov,StdCov);
+			GREnroll.UploadFiles();
+
+		 // GREnroll.selectforenrollment(Quotes);
+		 // GREnroll.selectDenQuotes(Single,DualChoice,DualChoicePlus,DenQuotes);
 
 	  }
 
