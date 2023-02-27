@@ -1,0 +1,5 @@
+ControlFocus("Open","","Edit1")
+sleep(2000)
+ControlSetText("Open","","Edit1","D:\Local\Git\CatsAuto\src\test\java\testdata\UploadFile.xlsx")
+sleep(2000)
+ControlClick("Open","","Button1")
