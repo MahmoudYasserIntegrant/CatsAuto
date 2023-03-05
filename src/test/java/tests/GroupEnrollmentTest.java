@@ -24,7 +24,7 @@ public class GroupEnrollmentTest extends ExcelLib {
 	@BeforeMethod
 	  public void beforeClass() {
 		  
-		 System.setProperty("webdriver.chrome.driver", "D:\\git\\chromedriver_win32(1)\\chromedriver.exe");
+		 System.setProperty("webdriver.chrome.driver", "D:\\Git\\chromedriver.exe");
 		 browserObject = new ChromeDriver();
 		 browserObject .manage().window().maximize();
 		 CATSLOGIN = new CATSLoginPage(browserObject);

@@ -1,8 +1,12 @@
 package pages;
 
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -47,7 +51,20 @@ public class AgentsAssignment extends AgentsAssignment_Locators{
 		
 		
 	}
+	public void GroupAgentAssignment() throws InterruptedException
+	{
+		
+		FluentWait Flwait = new FluentWait(browserObject);
+		 Flwait.withTimeout(5000, TimeUnit.MILLISECONDS);
+		 Flwait.pollingEvery(500, TimeUnit.MILLISECONDS);
+		 Flwait.ignoring(NoSuchElementException.class);
+		 Flwait.until(ExpectedConditions.elementToBeClickable(Next_Btn));
+		 browserObject.findElement(Next_Btn).click();
+		 Thread.sleep(1000);
+		 
 	
+			
+	}
 	public void EditGroupAgentAssignment(String LicenseNo, String State)
 	{
 		AssignAgent(LicenseNo, State);
