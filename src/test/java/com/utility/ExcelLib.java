@@ -55,6 +55,22 @@ public class ExcelLib extends Base {
 				"GroupEnrollment");
 		return arrayObject;
 	}
+	@DataProvider(name = "GroupDetails")
+	public static String[][] GroupDetails() throws IOException {
+		String[][] arrayObject = getExcelData(
+				
+				"D:\\git\\CatsAuto\\src\\test\\java\\testdata\\TestData.xlsx",
+				"GroupDetails");
+		return arrayObject;
+	}
+	@DataProvider(name = "GroupRoaster")
+	public static String[][] GroupRoaster() throws IOException {
+		String[][] arrayObject = getExcelData(
+				
+				"D:\\git\\CatsAuto\\src\\test\\java\\testdata\\TestData.xlsx",
+				"GroupRoaster");
+		return arrayObject;
+	}
 
 	public static String[][] getExcelData(String fileName, String sheetName) throws IOException {
 

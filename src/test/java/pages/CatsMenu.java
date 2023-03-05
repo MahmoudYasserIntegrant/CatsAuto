@@ -191,6 +191,21 @@ public class CatsMenu extends CatsMenuLocators  {
 			browserObject.findElement(GroupEnrollmentSideBarMenu).click();
 			wait.until(ExpectedConditions.titleContains("Group Enrollment"));		
       }
+      
+      public void NavigateToCustomerDetails() {
+    		
+    		WebElement element = (new WebDriverWait(browserObject, 100))
+    				   .until(ExpectedConditions.elementToBeClickable(By.linkText("Group Details")));
+    		element.click();
+    	 }
+        
+        public void createNewGroupQuote() {
+      	  
+      	  WebElement element = (new WebDriverWait(browserObject, 100))
+   				   .until(ExpectedConditions.elementToBeClickable(QuoteNewGroupBtn));
+   		element.click();
+        }
+      
 
 }
 

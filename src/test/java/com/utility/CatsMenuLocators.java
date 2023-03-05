@@ -26,6 +26,8 @@ public class CatsMenuLocators {
 		public By CensusSideBarMenu = By.id("ctl00_uxSideMenu_ctl03_lnkMenu");
 		public By GroupQuotes_Link = By.id("ctl00_uxSideMenu_ctl04_lnkMenu");
 		public By GroupEnrollmentSideBarMenu = By.id("ctl00_uxSideMenu_ctl05_lnkMenu");
+		public By GroupEnroll_Link = By.id("ctl00_uxSideMenu_ctl05_lnkMenu");
+		public By QuoteNewGroupBtn = By.id("ctl00_DefaultContent_uxAddCommand");
 
 		
 		

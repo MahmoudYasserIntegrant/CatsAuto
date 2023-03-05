@@ -4,8 +4,10 @@ import com.utility.ExcelLib;
 import pages.CatsMenu;
 import pages.CensusScreen;
 import pages.EmployerSettingPage;
+import pages.AgentsAssignment;
 import pages.CATSLoginPage;
 import pages.EmpGroupQuotes;
+import pages.GroupDetails;
 import org.testng.annotations.BeforeMethod;
 import java.io.File;
 import java.io.IOException;
@@ -24,11 +26,13 @@ import org.testng.annotations.AfterMethod;
 
 
 
-public class EmpGroupQuotesTest extends ExcelLib {
+public class EmpGroupDetailsTest extends ExcelLib {
 	WebDriver browserObject ;
 	CATSLoginPage CATSLOGIN;
 	CatsMenu CMenu ;
 	EmpGroupQuotes EGQuotes;
+	GroupDetails GrDetails;
+	AgentsAssignment AgAssign;
 
 	@BeforeMethod
 	  public void beforeClass() {
@@ -44,17 +48,18 @@ public class EmpGroupQuotesTest extends ExcelLib {
 		 
 	  }
 	
-	  @Test(dataProvider = "EmpQuotes")
-	  public void GenerateQuotes(String username , String password , String CustomerNum,String QuoteNbr) throws InterruptedException, IOException{
+	  @Test(dataProvider = "GroupDetails")
+	  public void AddgroupDetails(String username,String password,String CustName,String Address1,String Address2,String Zipcode,String PayrollNum,String SICcode,String SelectChk,String Flag) throws InterruptedException, IOException{
 
 		  CATSLOGIN = new CATSLoginPage(browserObject);
 		  CMenu = new CatsMenu(browserObject);
 		  EGQuotes = new EmpGroupQuotes(browserObject);
+		  AgAssign=new AgentsAssignment(browserObject);
+		  GrDetails=new GroupDetails(browserObject);
 		  CATSLOGIN.Login(username , password);	
-		  CMenu.NavigatetoGroupQuotes(CustomerNum);
-		  //EGQuotes.GenerateQuoteDocuments(QuoteNbr);
-		  int res=  EGQuotes.GetQuotesGeneratedCount(QuoteNbr);
-		//System.out.println("Result:"+res);
+		  CMenu.createNewGroupQuote();
+		  AgAssign.GroupAgentAssignment();
+		  GrDetails.Addgroupdetails(CustName,Address1,Address2,Zipcode,PayrollNum,SICcode,SelectChk,Flag);
 		  
 	  }
 
